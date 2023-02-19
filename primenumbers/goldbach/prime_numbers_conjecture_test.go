@@ -1,7 +1,7 @@
 package goldbach_test
 
 import (
-	"github.com/EmilGeorgiev/algorithms/goldbach"
+	"github.com/EmilGeorgiev/algorithms/primenumbers/goldbach"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
