@@ -11,11 +11,20 @@ func IsPrime(num uint64) bool {
 		return false
 	}
 
+	if num == 2 {
+		return true
+	}
+
+	if num%2 == 0 {
+		return false
+	}
+
 	f := uint64(math.Sqrt(float64(num)))
-	for i := uint64(2); i <= f; i++ {
-		if (num % i) == 0 {
+	for i := uint64(3); i <= f; i += 2 {
+		if num%i == 0 {
 			return false
 		}
 	}
+
 	return true
 }
