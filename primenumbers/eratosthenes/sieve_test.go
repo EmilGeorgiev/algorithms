@@ -21,7 +21,26 @@ func TestFindPrimeNumbersLessThen(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		result := eratosthenes.FindPrimeNumbersUpTo(c.input)
+		result := eratosthenes.FindPrimeNumbersLessThanOrEqualTo(c.input)
 		assert.Equal(t, c.expected, result)
+	}
+}
+
+func BenchmarkFindPrimeNumbersLessThanOrEqualTo100(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		eratosthenes.FindPrimeNumbersLessThanOrEqualTo(100)
+	}
+}
+
+func BenchmarkFindPrimeNumbersLessThanOrEqualTo1000(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		eratosthenes.FindPrimeNumbersLessThanOrEqualTo(1000)
+	}
+}
+
+func BenchmarkFindPrimeNumbersLessThanOrEqualTo10000(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		eratosthenes.FindPrimeNumbersLessThanOrEqualTo(10000)
+		// old -   	   26083	     49068 ns/op
 	}
 }
