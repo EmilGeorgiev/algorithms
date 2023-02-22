@@ -1,6 +1,4 @@
-package goldbach
-
-import "github.com/EmilGeorgiev/algorithms/primenumbers"
+package primenumbers
 
 // RepresentEvenNumAsSumOfTwoPrimeNums takes an even number as input and returns
 // a slice of pairs of prime numbers that add up to the given even number.
@@ -11,8 +9,8 @@ func RepresentEvenNumAsSumOfTwoPrimeNums(evenNumber uint64) [][2]uint64 {
 	// check if the difference between the even number and that prime number is also prime.
 	// If it is, add the pair of prime numbers to the result slice.
 	for i := evenNumber - 1; i >= 2; i-- {
-		if primenumbers.IsPrime(i) {
-			if primenumbers.IsPrime(evenNumber - i) {
+		if IsPrime(i) {
+			if IsPrime(evenNumber - i) {
 				result = append(result, [2]uint64{evenNumber - i, i})
 			}
 		}

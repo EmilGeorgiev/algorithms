@@ -1,7 +1,7 @@
-package goldbach_test
+package primenumbers_test
 
 import (
-	"github.com/EmilGeorgiev/algorithms/primenumbers/goldbach"
+	"github.com/EmilGeorgiev/algorithms/primenumbers"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -28,7 +28,7 @@ func TestRepresentEvenNumAsSumOfTwoPrimeNums(t *testing.T) {
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
 			// Action
-			actual := goldbach.RepresentEvenNumAsSumOfTwoPrimeNums(c.evenNumber)
+			actual := primenumbers.RepresentEvenNumAsSumOfTwoPrimeNums(c.evenNumber)
 
 			// Assert
 			assert.Equal(t, c.expected, actual)
