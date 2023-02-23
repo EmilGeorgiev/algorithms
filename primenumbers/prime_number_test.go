@@ -1,6 +1,7 @@
 package primenumbers_test
 
 import (
+	"math/big"
 	"testing"
 
 	"github.com/EmilGeorgiev/algorithms/primenumbers"
@@ -52,5 +53,38 @@ func TestIsPrimeNumber(t *testing.T) {
 			// Assert
 			assert.Equal(t, c.expected, actual)
 		})
+	}
+}
+
+func TestIsPrimeBig(t *testing.T) {
+	// Test some small prime numbers.
+	for _, n := range []string{"2", "3", "5", "7", "11", "13", "17", "19", "23", "29"} {
+		num := new(big.Int)
+		num.SetString(n, 10)
+		if !primenumbers.IsPrimeBig(num) {
+			t.Errorf("%s should be prime, but IsPrimeBig returned false", n)
+		}
+	}
+
+	// Test some small composite numbers.
+	for _, n := range []string{"4", "6", "8", "9", "10", "12", "14", "15", "16", "18", "20", "21", "22", "24", "25"} {
+		num := new(big.Int)
+		num.SetString(n, 10)
+		if primenumbers.IsPrimeBig(num) {
+			t.Errorf("%s should not be prime, but IsPrimeBig returned true", n)
+		}
+	}
+
+	// Test a large prime number.
+	num := new(big.Int)
+	num.SetString("6700417", 10)
+	if !primenumbers.IsPrimeBig(num) {
+		t.Errorf("6700417 should be prime, but IsPrimeBig returned false")
+	}
+
+	// Test a large composite number.
+	num.SetString("6700427", 10)
+	if primenumbers.IsPrimeBig(num) {
+		t.Errorf("6700427 should not be prime, but IsPrimeBig returned true")
 	}
 }
