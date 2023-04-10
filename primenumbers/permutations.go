@@ -45,7 +45,7 @@ func PermutationsWithoutDuplicationCount(n, k int) int {
 //   - a 2D slice of T containing all permutations without duplication
 //     of the input elements of size k.
 func PermutationsWithoutDuplication[T any](elements []T, k int) [][]T {
-	if k == 0 {
+	if k == 0 || k > len(elements) {
 		return [][]T{{}}
 	}
 
