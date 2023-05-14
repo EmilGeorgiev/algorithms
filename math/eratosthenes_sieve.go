@@ -1,4 +1,4 @@
-package primenumbers
+package math
 
 // FindPrimeNumbersLessThanOrEqualTo returns a slice of prime numbers that are
 // less than or equal to the given number. The implementation uses the

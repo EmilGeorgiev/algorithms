@@ -1,9 +1,9 @@
-package primenumbers_test
+package math_test
 
 import (
 	"testing"
 
-	"github.com/EmilGeorgiev/algorithms/primenumbers"
+	"github.com/EmilGeorgiev/algorithms/math"
 )
 
 // Test for CalculatePerfectNumberByMersenne
@@ -19,7 +19,7 @@ func TestCalculatePerfectNumberByMersenne(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		result, err := primenumbers.CalculatePerfectNumberByMersenne(testCase.p)
+		result, err := math.CalculatePerfectNumberByMersenne(testCase.p)
 		if err != nil {
 			t.Errorf("CalculatePerfectNumberByMersenne(%d) returned an error: %v", testCase.p, err)
 		} else if result.String() != testCase.expected {

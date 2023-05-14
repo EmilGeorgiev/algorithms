@@ -1,4 +1,4 @@
-package primenumbers
+package math
 
 import "math/big"
 

@@ -1,4 +1,4 @@
-package primenumbers
+package math
 
 func FindCombinations[T any](elements []T, k int64) [][]T {
 

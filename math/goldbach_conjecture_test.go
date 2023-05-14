@@ -1,7 +1,7 @@
-package primenumbers_test
+package math_test
 
 import (
-	"github.com/EmilGeorgiev/algorithms/primenumbers"
+	"github.com/EmilGeorgiev/algorithms/math"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -28,7 +28,7 @@ func TestRepresentEvenNumAsSumOfTwoPrimeNums(t *testing.T) {
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
 			// Action
-			actual := primenumbers.RepresentEvenNumAsSumOfTwoPrimeNums(c.evenNumber)
+			actual := math.RepresentEvenNumAsSumOfTwoPrimeNums(c.evenNumber)
 
 			// Assert
 			assert.Equal(t, c.expected, actual)

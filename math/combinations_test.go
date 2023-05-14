@@ -1,7 +1,7 @@
-package primenumbers_test
+package math_test
 
 import (
-	"github.com/EmilGeorgiev/algorithms/primenumbers"
+	"github.com/EmilGeorgiev/algorithms/math"
 	"reflect"
 	"testing"
 )
@@ -39,7 +39,7 @@ func TestGetCombinations(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := primenumbers.FindCombinations(tt.elements, tt.k)
+			result := math.FindCombinations(tt.elements, tt.k)
 			if !reflect.DeepEqual(result, tt.expected) {
 				t.Errorf("Expected %v, got %v", tt.expected, result)
 			}

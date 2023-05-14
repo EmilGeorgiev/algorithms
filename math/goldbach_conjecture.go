@@ -1,4 +1,4 @@
-package primenumbers
+package math
 
 // RepresentEvenNumAsSumOfTwoPrimeNums takes an even number as input and returns
 // a slice of pairs of prime numbers that add up to the given even number.

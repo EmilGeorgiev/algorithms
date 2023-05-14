@@ -1,7 +1,7 @@
-package primenumbers_test
+package math_test
 
 import (
-	"github.com/EmilGeorgiev/algorithms/primenumbers"
+	"github.com/EmilGeorgiev/algorithms/math"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -21,26 +21,26 @@ func TestFindPrimeNumbersLessThen(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		result := primenumbers.FindPrimeNumbersLessThanOrEqualTo(c.input)
+		result := math.FindPrimeNumbersLessThanOrEqualTo(c.input)
 		assert.Equal(t, c.expected, result)
 	}
 }
 
 func BenchmarkFindPrimeNumbersLessThanOrEqualTo100(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		primenumbers.FindPrimeNumbersLessThanOrEqualTo(100)
+		math.FindPrimeNumbersLessThanOrEqualTo(100)
 	}
 }
 
 func BenchmarkFindPrimeNumbersLessThanOrEqualTo1000(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		primenumbers.FindPrimeNumbersLessThanOrEqualTo(1000)
+		math.FindPrimeNumbersLessThanOrEqualTo(1000)
 	}
 }
 
 func BenchmarkFindPrimeNumbersLessThanOrEqualTo10000(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		primenumbers.FindPrimeNumbersLessThanOrEqualTo(10000)
+		math.FindPrimeNumbersLessThanOrEqualTo(10000)
 		// old -   	   26083	     49068 ns/op
 	}
 }

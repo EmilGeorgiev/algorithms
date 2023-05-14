@@ -1,4 +1,4 @@
-package primenumbers
+package math
 
 // FindPrimeDivisors returns the prime factors of the input integer 'n'.
 func FindPrimeDivisors(n int64) []int64 {

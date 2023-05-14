@@ -1,7 +1,7 @@
-package primenumbers_test
+package math_test
 
 import (
-	"github.com/EmilGeorgiev/algorithms/primenumbers"
+	"github.com/EmilGeorgiev/algorithms/math"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -19,7 +19,7 @@ func TestFindPrimeDivisors(t *testing.T) {
 	}
 
 	for _, tc := range testCases {
-		got := primenumbers.FindPrimeDivisors(tc.input)
+		got := math.FindPrimeDivisors(tc.input)
 		assert.Equal(t, tc.want, got)
 	}
 }
